@@ -1,11 +1,13 @@
 let canvas = document.querySelector('canvas')
 let context = canvas.getContext('2d')
 
-let size = window.innerHeight
-canvas.width = size
-canvas.height = size
+let size = 320
+let dpr = window.devicePixelRatio
+canvas.width = size * dpr
+canvas.height = size * dpr
+context.scale(dpr, dpr)
 context.lineWidth = 8
-let step = size / 6
+let step = size / 8
 let white = '#F2F5F1'
 let colors = ['#D40920', '#1356A2', '#F7D842', '#14080E', '#D40920', '#F7D842']
 
